@@ -30,6 +30,13 @@ public class TrafficLight implements Runnable {
         }
     }
 
+    void sleep(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            System.out.println("Traffic Light interrupted.");
+        }
+    }
 
     public static void main(String[] args) {
     }
