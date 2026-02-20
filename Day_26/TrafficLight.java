@@ -39,5 +39,8 @@ public class TrafficLight implements Runnable {
     }
 
     public static void main(String[] args) {
+        TrafficLight trafficLight = new TrafficLight();
+        Thread t1 = new Thread(trafficLight);
+        t1.start();
     }
 }
