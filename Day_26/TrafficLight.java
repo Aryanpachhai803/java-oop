@@ -43,4 +43,4 @@ public class TrafficLight implements Runnable {
         Thread t1 = new Thread(trafficLight);
         t1.start();
     }
-}
+}   

@@ -36,5 +36,10 @@ public class TicketBooking extends Thread {
     }
 
     public static void main(String[] args) {
+        TicketBooking t1 = new TicketBooking("Alice", 3);
+        TicketBooking t2 = new TicketBooking("Bob", 3);
+
+        t1.start();
+        t2.start();
     }
 }
