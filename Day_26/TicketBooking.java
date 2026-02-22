@@ -1,7 +1,7 @@
 package Day_26;
-
+import java.util.Scanner;
 public class TicketBooking extends Thread {
-    static int availableTickets = 5;
+    static int availableTickets;
     String userName;
     int ticketsRequested;
 
@@ -36,10 +36,30 @@ public class TicketBooking extends Thread {
     }
 
     public static void main(String[] args) {
-        TicketBooking t1 = new TicketBooking("Alice", 3);
-        TicketBooking t2 = new TicketBooking("Bob", 3);
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter total available tickets: ");
+        availableTickets = sc.nextInt();
+
+        System.out.print("Enter first user name: ");
+        String name1 = sc.next();
+
+        System.out.print("Enter tickets requested by " + name1 + ": ");
+        int tickets1 = sc.nextInt();
+
+        System.out.print("Enter second user name: ");
+        String name2 = sc.next();
+
+        System.out.print("Enter tickets requested by " + name2 + ": ");
+        int tickets2 = sc.nextInt();
+
+        TicketBooking t1 = new TicketBooking(name1, tickets1);
+        TicketBooking t2 = new TicketBooking(name2, tickets2);
 
         t1.start();
         t2.start();
+
+        sc.close();
     }
 }
