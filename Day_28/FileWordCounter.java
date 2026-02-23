@@ -31,6 +31,8 @@ public class FileWordCounter {
             System.out.println("Words: " + wordCount);
             System.out.println("Characters: " + charCount);
 
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
         }
     }
 }
