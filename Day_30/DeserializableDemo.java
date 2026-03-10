@@ -13,7 +13,7 @@ class Employee implements Serializable {
 }
 
 public class DeserializableDemo{
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) {
         Employee e = null;
         try{
             FileInputStream fis = new FileInputStream("aryanotherdata.ser");
@@ -30,3 +30,4 @@ public class DeserializableDemo{
         System.out.println("Number: " + e.number);
     }
 }
+ 
