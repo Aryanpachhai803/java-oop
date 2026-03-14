@@ -9,7 +9,9 @@ public class StringCompare {
         System.out.println("String 2: "+ s2);
 
         // Checks exact string(Case-sensitive)
-        System.out.println("Equals: " +s1.equals(s2));
+        System.out.println("Equals: " + s1.equals(s2));
 
+        // Checks string equals ignoring case
+        System.out.println("Equals Ignoring Case: " + s1.equalsIgnoreCase(s2));
     }
 }
