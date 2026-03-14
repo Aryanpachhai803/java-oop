@@ -13,5 +13,8 @@ public class StringCompare {
 
         // Checks string equals ignoring case
         System.out.println("Equals Ignoring Case: " + s1.equalsIgnoreCase(s2));
+
+        // Return 0 if equal, positive or negative otherwise
+        System.out.println("Compare: " + s1.compareTo(s2));
     }
 }
