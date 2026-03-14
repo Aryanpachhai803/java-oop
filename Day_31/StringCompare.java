@@ -16,5 +16,8 @@ public class StringCompare {
 
         // Return 0 if equal, positive or negative otherwise
         System.out.println("Compare: " + s1.compareTo(s2));
+
+        // Same as compare ignoring case
+        System.out.println("Compare Ignoring Case: " + s1.compareToIgnoreCase(s2));
     }
 }
