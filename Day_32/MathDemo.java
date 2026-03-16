@@ -7,5 +7,6 @@ public class MathDemo {
         int y = 30;
 
         System.out.println("Max is: " + Math.max(x,y));
+        System.out.println("Min is: " + Math.min(x,y));
     }
 }
