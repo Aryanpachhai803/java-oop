@@ -1,5 +1,7 @@
 package Day_32;
 
+import java.util.Scanner;
+
 public class StringWrapper {
     String text;
     public StringWrapper(String text){
@@ -19,6 +21,15 @@ public class StringWrapper {
         return result;
     }
     public static void main(String[] args) {
-        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a String: ");
+        String input = sc.nextLine();
+
+        StringWrapper sw = new StringWrapper(input);
+
+        System.out.println("Vowels only: " + sw.getVowels());
+
+        sc.close();
     }
 }
