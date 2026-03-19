@@ -40,4 +40,26 @@ public class CalculatorDemo extends Applet implements ActionListener {
         div.addActionListener(this);
     }
 
+    public void actionPerformed(ActionEvent e) {
+            double num1 = Double.parseDouble(t1.getText());
+            double num2 = Double.parseDouble(t2.getText());
+            double res = 0;
+
+            if (e.getSource() == add) {
+                res = num1 + num2;
+            } else if (e.getSource() == sub) {
+                res = num1 - num2;
+            } else if (e.getSource() == mul) {
+                res = num1 * num2;
+            } else if (e.getSource() == div) {
+                if (num2 == 0) {
+                    result.setText("Cannot divide by zero");
+                    return;
+                }
+                res = num1 / num2;
+            }
+
+            result.setText(String.valueOf(res));
+
     }
+}
