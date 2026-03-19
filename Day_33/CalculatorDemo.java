@@ -41,6 +41,7 @@ public class CalculatorDemo extends Applet implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        try {
             double num1 = Double.parseDouble(t1.getText());
             double num2 = Double.parseDouble(t2.getText());
             double res = 0;
@@ -61,5 +62,8 @@ public class CalculatorDemo extends Applet implements ActionListener {
 
             result.setText(String.valueOf(res));
 
+        } catch (Exception ex) {
+            result.setText("Invalid input");
+        }
     }
 }
