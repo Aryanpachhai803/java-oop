@@ -1,4 +1,5 @@
 package Day_29;
+
 import java.util.*;
 import java.io.*;
 
@@ -12,5 +13,21 @@ public class PasswordChecker {
         System.out.print("Enter password: ");
         String inputPass = sc.nextLine();
 
+        boolean found = false;
+
+        FileReader fr = new FileReader("users.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(" ");
+
+                String username = data[0];
+                String password = data[1];
+
+                if (username.equals(inputUser) && password.equals(inputPass)) {
+                    found = true;
+                    break;
+                }
     }
 }
