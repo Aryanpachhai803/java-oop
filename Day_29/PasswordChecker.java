@@ -15,7 +15,7 @@ public class PasswordChecker {
 
         boolean found = false;
 
-        try{
+        try {
             FileReader fr = new FileReader("users.txt");
             BufferedReader br = new BufferedReader(fr);
 
@@ -31,18 +31,17 @@ public class PasswordChecker {
                     break;
                 }
             }
-        
 
-        br.close();
+            br.close(); 
 
-        if (found) {
+            if (found) {
                 System.out.println("Login Successful");
             } else {
                 System.out.println("Invalid username or password");
             }
-        }
-        catch(){
 
-        }    
+        } catch (IOException e) {
+            System.out.println("Error reading file");
+        }
     }
 }
