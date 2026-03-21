@@ -31,6 +31,18 @@ abstract class BankAccount {
     }
 }
 
+class SavingsAccount extends BankAccount {
+
+    SavingsAccount(String name, double balance) {
+        super(name, balance);
+    }
+
+    void calculateInterest() {
+        double interest = balance * 0.05;
+        System.out.println("Savings Interest: " + interest);
+    }
+}
+
 
 public class Bank {
     public static void main(String[] args) {
