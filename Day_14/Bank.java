@@ -43,6 +43,16 @@ class SavingsAccount extends BankAccount {
     }
 }
 
+class CurrentAccount extends BankAccount {
+
+    CurrentAccount(String name, double balance) {
+        super(name, balance);
+    }
+
+    void calculateInterest() {
+        System.out.println("No interest for Current Account");
+    }
+}
 
 public class Bank {
     public static void main(String[] args) {
