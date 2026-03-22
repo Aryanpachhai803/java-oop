@@ -25,5 +25,12 @@ class CashPayment implements Pay {
 public class Payment {
     public static void main(String[] args) {
 
+        Pay p1 = new CreditCardPayment();
+        Pay p2 = new PayPalPayment();
+        Pay p3 = new CashPayment();
+
+        p1.pay(1000);
+        p2.pay(500);
+        p3.pay(200);
     }
 }
