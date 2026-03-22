@@ -16,6 +16,11 @@ class PayPalPayment implements Pay {
     }
 }
 
+class CashPayment implements Pay {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using Cash.");
+    }
+}
 
 public class Payment {
     public static void main(String[] args) {
