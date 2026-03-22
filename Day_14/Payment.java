@@ -10,6 +10,12 @@ class CreditCardPayment implements Pay {
     }
 }
 
+class PayPalPayment implements Pay {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using PayPal.");
+    }
+}
+
 
 public class Payment {
     public static void main(String[] args) {
