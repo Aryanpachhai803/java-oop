@@ -108,5 +108,24 @@ public class FoodOrder {
                 System.out.println(food.name + " added to cart!");
             }
 
-        }    }
+        } while(choice != 4);
+
+        double total = 0;
+        System.out.println("\n=== Bill ===");
+
+        for (int i = 0; i < orders.size(); i++) {
+            Food f = orders.get(i);
+            int qty = quantities.get(i);
+            double price = f.getPrice() * qty;
+
+            System.out.println(f.name + " x " + qty + " = Rs. " + price);
+            total += price;
+        }
+
+        System.out.println("---------------------");
+        System.out.println("Total Amount: Rs. " + total);
+        System.out.println("Thank you!");
+
+        sc.close(); 
+    }
 }
