@@ -17,6 +17,17 @@ public class FoodOrder {
         }
     }
 
+    static class Pizza extends Food {
+        Pizza() {
+            super("Pizza");
+        }
+
+        @Override
+        double getPrice() {
+            return 500;
+        }
+    }
+
     public static void main(String[] args) {
         
     }
