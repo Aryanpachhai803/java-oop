@@ -80,6 +80,11 @@ public class EmployeeSalary {
             return stipend;
         }
     }
+
+    static double applyTax(double salary){
+        return salary*0.9;
+    }
+    
     public static void main(String[] args) {
         
     }
