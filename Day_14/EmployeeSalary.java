@@ -84,8 +84,24 @@ public class EmployeeSalary {
     static double applyTax(double salary){
         return salary*0.9;
     }
-    
+
     public static void main(String[] args) {
-        
+        Employee e1 = new FullTimeEmployee("Ram", 1, 30000, 10000);
+        Employee e2 = new PartTimeEmployee("Hari", 2, 50, 100);
+        Employee e3 = new Intern("Shyam", 3, 20000);
+
+        Employee[] employees = {e1, e2, e3};
+
+        for(Employee e : employees){
+            e.displayInfo();
+
+            double salary = e.calculateSalary();
+            double finalSalary = applyTax(salary);
+            
+            System.out.println("Gross Salary: " + salary);
+            System.out.println("After Tax: " + finalSalary);
+
+            System.out.println("-----------------------------------");
+        }
     }
 }
