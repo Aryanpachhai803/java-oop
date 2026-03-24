@@ -16,6 +16,28 @@ public class EmployeeSalary {
             System.out.println("ID: " + id + ", Name: " + name);
         }
     }
+
+    static class FullTimeEmployee extends Employee{
+        double monthlySalary;
+        double bonus;
+
+        FullTimeEmployee(String name,int id,double monthlySalary,double bonus){
+            super(name,id);
+
+            if(monthlySalary <0 || bonus<0){
+                System.out.println("Salary/Bonus can't be negative");
+            }
+
+            this.monthlySalary = monthlySalary;
+            this.bonus = bonus;
+        }
+
+        @Override
+        double calculateSalary(){
+            return monthlySalary+bonus;
+        }
+    }
+    
     public static void main(String[] args) {
         
     }
