@@ -62,7 +62,24 @@ public class EmployeeSalary {
         }
     }
 
-    
+    static class Intern extends Employee{
+        double stipend;
+
+        Intern(String name,int id,double stipend){
+            super(name,id);
+            
+            if(stipend<0){
+                System.out.println("Stipend can't be negative");
+            }
+
+            this.stipend = stipend;
+        }
+
+        @Override
+        double calculateSalary(){
+            return stipend;
+        }
+    }
     public static void main(String[] args) {
         
     }
