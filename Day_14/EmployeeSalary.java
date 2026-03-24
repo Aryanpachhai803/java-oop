@@ -37,6 +37,31 @@ public class EmployeeSalary {
             return monthlySalary+bonus;
         }
     }
+
+    static class PartTimeEmployee extends Employee{
+        int hoursWorked;
+        double hourlyRate;
+
+        PartTimeEmployee(String name,int id,int hoursWorked,double hourlyRate){
+            super(name,id);
+
+            if(hoursWorked<0 || hourlyRate<0){
+                System.out.println("Invalid hours or rate");
+            }
+
+            this.hoursWorked = hoursWorked;
+            this.hourlyRate = hourlyRate;
+        }
+
+        @Override
+        double calculateSalary(){
+            if(hoursWorked>40){
+                return(40*hourlyRate) +((hoursWorked-40) * hourlyRate *1.5);
+            }
+            return hoursWorked *hourlyRate;
+        }
+    }
+
     
     public static void main(String[] args) {
         
