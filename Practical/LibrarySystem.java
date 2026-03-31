@@ -54,6 +54,25 @@ public class LibrarySystem {
             System.out.println(e);
         }
     }
+
+    public static void issueBook(int id) {
+        try (Connection con = getConnection()) {
+            String query = "UPDATE books SET available = false WHERE id = ? AND available = true";
+            PreparedStatement ps = con.prepareStatement(query);
+
+            ps.setInt(1, id);
+            int rows = ps.executeUpdate();
+
+            if (rows > 0) {
+                System.out.println("Book issued!");
+            } else {
+                System.out.println("Book not available!");
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     public static void main(String[] args) {
         
     }
