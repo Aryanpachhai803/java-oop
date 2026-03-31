@@ -1,8 +1,6 @@
 package Practical;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 public class LibrarySystem {
     static final String URL = "jdbc:mysql://localhost:3306/library_db";
@@ -27,7 +25,30 @@ public class LibrarySystem {
             ps.setString(2, author);
 
             ps.executeUpdate();
-            System.out.println("✅ Book added!");
+            System.out.println("Book added!");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static void viewBooks() {
+        try (Connection con = getConnection()) {
+            String query = "SELECT * FROM books";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            System.out.println("\nID | Title | Author | Status");
+            System.out.println("----------------------------------");
+
+            while (rs.next()) {
+                System.out.println(
+                        rs.getInt("id") + " | " +
+                        rs.getString("title") + " | " +
+                        rs.getString("author") + " | " +
+                        (rs.getBoolean("available") ? "Available" : "Issued")
+                );
+            }
 
         } catch (Exception e) {
             System.out.println(e);
