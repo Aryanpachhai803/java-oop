@@ -73,6 +73,21 @@ public class LibrarySystem {
             System.out.println(e);
         }
     }
+
+    public static void returnBook(int id) {
+        try (Connection con = getConnection()) {
+            String query = "UPDATE books SET available = true WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(query);
+
+            ps.setInt(1, id);
+            ps.executeUpdate();
+
+            System.out.println("Book returned!");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     public static void main(String[] args) {
         
     }
