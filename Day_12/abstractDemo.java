@@ -35,6 +35,25 @@ class Car extends Vehicle {
     }
 }
 
+class Bike extends Vehicle {
+
+    Bike(String brand) {
+        super(brand);
+    }
+
+    void startEngine() {
+        System.out.println("Bike engine starts with a self-start or kick.");
+    }
+
+    void stopEngine() {
+        System.out.println("Bike engine stops with a switch.");
+    }
+
+    void fuelType() {
+        System.out.println("Bike uses petrol.");
+    }
+}
+
 
 public class abstractDemo {
     public static void main(String[] args) {
