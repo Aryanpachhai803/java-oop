@@ -54,6 +54,24 @@ class Bike extends Vehicle {
     }
 }
 
+class Truck extends Vehicle {
+
+    Truck(String brand) {
+        super(brand);
+    }
+
+    void startEngine() {
+        System.out.println("Truck engine starts with heavy ignition.");
+    }
+
+    void stopEngine() {
+        System.out.println("Truck engine stops slowly.");
+    }
+
+    void fuelType() {
+        System.out.println("Truck uses diesel.");
+    }
+}
 
 public class abstractDemo {
     public static void main(String[] args) {
