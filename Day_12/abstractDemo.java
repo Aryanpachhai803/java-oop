@@ -76,5 +76,26 @@ class Truck extends Vehicle {
 public class abstractDemo {
     public static void main(String[] args) {
 
+        Vehicle car = new Car("Toyota");
+        Vehicle bike = new Bike("Yamaha");
+        Vehicle truck = new Truck("Mahindra");
+
+        System.out.println("=== Car ===");
+        car.displayBrand();
+        car.startEngine();
+        car.fuelType();
+        car.stopEngine();
+
+        System.out.println("\n=== Bike ===");
+        bike.displayBrand();
+        bike.startEngine();
+        bike.fuelType();
+        bike.stopEngine();
+
+        System.out.println("\n=== Truck ===");
+        truck.displayBrand();
+        truck.startEngine();
+        truck.fuelType();
+        truck.stopEngine();
     }
 }
